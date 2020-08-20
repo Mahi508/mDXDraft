@@ -1,8 +1,67 @@
-<ng-sidebar-container>
-  <ng-sidebar [opened]="opened">
-<p>contents</p>
-  </ng-sidebar>
-  <div ng-sidebar-content>
-<button (click)="toggleSidebar()">Open side bar</button>
-  </div>
-</ng-sidebar-container>
+<mat-toolbar color="primary" style="padding: 0;">
+  <mat-toolbar-row>
+    <button mat-icon-button>
+      <mat-icon (click)="sidenav.toggle()">menu</mat-icon>
+    </button>
+    <h1>mDX</h1>
+    <span class="flexExpand"></span>
+      <span class="flexExpand"></span>
+      <span class="material-icons" style="padding-right: 10px;font-size: 30px;" [matMenuTriggerFor]="notmenu">
+        notification_important
+      </span>
+      <mat-menu #notmenu="matMenu">
+        <button mat-menu-item>
+          <mat-icon>notification_important</mat-icon> Notification
+        </button>
+        <button mat-menu-item>
+          <mat-icon>notification_important</mat-icon> Notification
+        </button>
+        <button mat-menu-item>
+          <mat-icon>notification_important</mat-icon> Notification
+        </button>
+      </mat-menu>
+
+      <span class="material-icons" style="padding-right: 10px;font-size: 30px;" [matMenuTriggerFor]="menu">
+        account_circle
+      </span>
+
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item>
+          <mat-icon>person</mat-icon> Profile
+        </button>
+        <button mat-menu-item>
+          <mat-icon>settings</mat-icon>Settings
+        </button>
+        <button mat-menu-item>
+          <mat-icon>login</mat-icon>Logout
+        </button>
+      </mat-menu>
+    </mat-toolbar-row>
+  </mat-toolbar>
+  <!-- Side nav -->
+      <mat-sidenav-container>
+        <!-- <mat-sidenav  [fixedInViewport]="true"  #sidenav mode="side" opened > -->
+          <mat-sidenav #sidenav mode="side" opened style="background-color:#B2FF59">
+
+          <mat-nav-list>
+            <a mat-list-item [routerLink]="'/users'">
+              <mat-icon>person</mat-icon> User Management
+            </a>
+            <a mat-list-item [routerLink]="'/management'">
+              <mat-icon>dashboard</mat-icon> mDX Monitoring
+            </a>
+            <a mat-list-item [routerLink]="'/accounts'"> demo</a>
+            <a mat-list-item [routerLink]="'/create-account'"> demo </a>
+
+            <a mat-list-item (click)="sidenav.toggle()" href="" mat-list-item>Close</a>
+
+          </mat-nav-list>
+        </mat-sidenav>
+        <mat-sidenav-content>
+          <div style="height: 88vh;">
+
+            <router-outlet></router-outlet>
+          </div>
+        </mat-sidenav-content>
+      </mat-sidenav-container>
+

@@ -1,8 +1,23 @@
-ng-sidebar-container {
-  height: 100vh;
+/* .mat-toolbar.mat-primary {
+  background: #9ae04b;
+  color: #fff;
+} */
+body { background-color: rgb(247, 243, 243) !important; }
+.flexExpand {
+  flex: 1 1 auto;
 }
-::ng-deep .ng-sidebar {
-  background-color: aquamarine;
-  width: 300px;
-  padding: 2em 3em;
+.basic-container {
+  padding: 30px;
+}
+
+.version-info {
+  font-size: 8pt;
+  float: right;
+}
+.cdk-overlay-container{
+    top:66.5px;
+}
+.cdk-overlay-connected-position-bounding-box{
+    top:0 !important;
+
 }
