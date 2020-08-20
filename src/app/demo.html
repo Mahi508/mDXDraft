@@ -1,140 +1,58 @@
-<!-- Toolbar -->
-<mat-toolbar color="primary" class="header">
-  <div style="font-size:large;padding-left: 20px;">mDX&nbsp;</div>
-  <span class="nav-tool-items">
-    <mat-icon (click)="sidenav.toggle()" class="hamburger">menu</mat-icon>
-  </span>
-  <span class="flexExpand"></span>
-  <span class="material-icons" style="padding-right: 10px;" [matMenuTriggerFor]="notmenu">
-    notification_important
-  </span>
-  <mat-menu #notmenu="matMenu">
-    <button mat-menu-item>
-      <mat-icon>notification_important</mat-icon> Notification
-    </button>
-    <button mat-menu-item>
-      <mat-icon>notification_important</mat-icon> Notification
-    </button>
-    <button mat-menu-item>
-      <mat-icon>notification_important</mat-icon> Notification
-    </button>
 
+<!-- main app container -->
+<div class="card">
+  <h2 class="card-header">Create a new user</h2>
 
-  </mat-menu>
-  <span class="material-icons" style="padding-right: 10px;" [matMenuTriggerFor]="menu">
-    account_circle
-  </span>
-  <mat-menu #menu="matMenu">
-    <button mat-menu-item>
-      <mat-icon>person</mat-icon> Profile
-    </button>
-    <button mat-menu-item>
-      <mat-icon>settings</mat-icon>Settings
-    </button>
-    <button mat-menu-item>
-      <mat-icon>login</mat-icon>Logout
-    </button>
-  </mat-menu>
+  <div class="card-body">
+      <form name="form">
+          <div class="form-row">
+              <div class="form-group col-1">
+                  <label>Title</label>
+                  <select name="title" class="form-control" required>
+                      <option value=""></option>
+                      <option value="Mr">Mr</option>
+                      <option value="Mrs">Mrs</option>
+                      <option value="Miss">Miss</option>
+                      <option value="Ms">Ms</option>
+                  </select>
 
-</mat-toolbar>
+              </div>
+              <div class="form-group col-1">
+                  <label>Name</label>
+                  <input type="text" name="firstName" class="form-control"  required>
+              </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col">
+                <label>Code</label>
+                <input type="text" name="password" class="form-control"  required minlength="6">
+            </div>
+            <div class="form-group col">
+                <label>Address</label>
+                <input type="password" name="confirmPassword" class="form-control" required>
+            </div>
+        </div>
+          <div class="form-row">
+              <div class="form-group col">
+                  <label>Password</label>
+                  <input type="password" name="password" class="form-control"  required minlength="6">
 
-<mat-sidenav-container>
-  <!-- Sidenav -->
-  <mat-sidenav #sidenav [mode]="isBiggerScreen() ? 'over' : 'side'" [(opened)]="opened" [fixedInViewport]="true"
-    [fixedTopGap]>
-    <mat-nav-list>
+              </div>
+              <div class="form-group col">
+                  <label>Confirm Password</label>
+                  <input type="password" name="confirmPassword" class="form-control" required>
 
-      <a mat-list-item>
-        <mat-icon>person</mat-icon> User Management
-      </a>
-      <a mat-list-item>
-        <mat-icon>dashboard</mat-icon> mDX Monitoring
-      </a>
-
-
-    </mat-nav-list>
-  </mat-sidenav>
-
-  <!-- Main content -->
-  <div>
-
-    <!-- Applying the mat-tyography class adds styles for native elements. -->
-    <section class="mat-typography title-group">
-      <h1>welcome</h1>
-      <mat-divider></mat-divider>
-    </section>
-
-    <!-- Angular material cards -->
-    <div>
-
-      <mat-form-field style="white-space: nowrap; padding-left: 10px;">
-        <input matInput type="search" placeholder="search here" class="search-input">
-        <mat-icon class="material-icons">search</mat-icon>
-      </mat-form-field>
-
-
-      <table mat-table [dataSource]="dataSource">
-
-        <!--- Note that these columns can be defined in any order.
-            The actual rendered columns are set as a property on the row definition" -->
-
-        <!-- Position Column -->
-        <ng-container matColumnDef="position">
-          <th mat-header-cell *matHeaderCellDef> No. </th>
-          <td mat-cell *matCellDef="let element"> {{element.position}} </td>
-        </ng-container>
-
-        <!-- Name Column -->
-        <ng-container matColumnDef="name">
-          <th mat-header-cell *matHeaderCellDef> Name </th>
-          <td mat-cell *matCellDef="let element"> {{element.name}} </td>
-        </ng-container>
-
-        <!-- Weight Column -->
-        <ng-container matColumnDef="code">
-          <th mat-header-cell *matHeaderCellDef> Code </th>
-          <td mat-cell *matCellDef="let element"> {{element.code}} </td>
-        </ng-container>
-
-        <!-- Symbol Column -->
-        <ng-container matColumnDef="address">
-          <th mat-header-cell *matHeaderCellDef> Address </th>
-          <td mat-cell *matCellDef="let element"> {{element.address}} </td>
-        </ng-container>
-
-        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-      </table>
-    </div>
+              </div>
+          </div>
+          <div class="form-group form-check">
+              <input type="checkbox" name="acceptTerms" id="acceptTerms" class="form-check-input"  required>
+              <label for="acceptTerms" class="form-check-label">Accept Terms & Conditions</label>
+              <div  class="invalid-feedback">Accept Ts & Cs is required</div>
+          </div>
+          <div class="text-center">
+              <button class="btn btn-primary mr-1" style="background-color: green;">&nbsp;&nbsp;Add&nbsp;&nbsp;&nbsp;&nbsp;</button>
+              <button class="btn btn-secondary" type="reset">Cancel</button>
+          </div>
+      </form>
   </div>
-</mat-sidenav-container>
-
-
 </div>
-</mat-toolbar-row>
-
-<mat-toolbar-row>
-  <span style="font-size: 12px;">SimpleCRM helps you easily manage your contacts</span>
-</mat-toolbar-row>
-</mat-toolbar>
-<mat-sidenav-container>
-  <mat-sidenav #sidenav>
-    <mat-nav-list>
-
-      <a mat-list-item [routerLink]="'/accounts'"> Accounts </a>
-      <a mat-list-item [routerLink]="'/create-account'"> Create Account </a>
-      <a mat-list-item [routerLink]="'/contacts'"> Contacts </a>
-      <a mat-list-item [routerLink]="'/create-contact'"> Create Contact </a>
-      <a mat-list-item [routerLink]="'/activities'"> Activities </a>
-      <a mat-list-item [routerLink]="'/create-activity'"> Create Activity </a>
-      <a mat-list-item (click)="sidenav.toggle()" href="" mat-list-item>Close</a>
-
-    </mat-nav-list>
-  </mat-sidenav>
-  <mat-sidenav-content>
-    <div style="height: 88vh;">
-
-      <router-outlet></router-outlet>
-    </div>
-  </mat-sidenav-content>
-</mat-sidenav-container>

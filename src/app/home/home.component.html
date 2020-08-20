@@ -1,1 +1,89 @@
-<h1>Monitoring page works...</h1>
+<div style="padding: 5px;padding-top: 0;">
+  <mat-toolbar style="background-color: rgb(228, 250, 223);" fxLayout="row" fxLayoutAlign="start center">
+    <mat-toolbar-row style="padding-top: 10px;">
+      <mat-form-field>
+        <input matInput placeholder="   Search...">
+      </mat-form-field>
+      <mat-icon>search</mat-icon>
+      <a mat-button></a>
+      <a mat-button></a>
+        <a mat-button>Advances</a>
+        <a mat-button>Bills</a>
+        <a mat-button>GRN</a>
+        <a mat-button>OtherOptions</a>
+        <a mat-button>OtherOptions</a>
+        <a mat-button>OtherOptions  </a>
+      </mat-toolbar-row>
+
+  </mat-toolbar>
+</div>
+<div >
+  <!-- Master Toggle Button -->
+  <div style="text-align: end;padding: 10px 10px;">
+    <a mat-raised-button href="javascript:void(0)" (click)="toggleTableRows()" color="primary">All Details</a>
+  </div>
+
+  <table mat-table [dataSource]="dataStudentsList" multiTemplateDataRows >
+
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef> Bill ID </th>
+      <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+    </ng-container>
+
+
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef> UserName </th>
+      <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="age">
+      <th mat-header-cell *matHeaderCellDef> Tx.Status </th>
+      <td mat-cell *matCellDef="let element"> {{element.age}} </td>
+    </ng-container>
+
+
+    <ng-container matColumnDef="address">
+      <th mat-header-cell *matHeaderCellDef> Amount </th>
+      <td mat-cell *matCellDef="let element"> {{element.address}} </td>
+    </ng-container>
+
+
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef> Actions </th>
+      <td mat-cell *matCellDef="let element">
+        <a mat-button href="javascript:void()" (click)="element.isExpanded = !element.isExpanded">View
+          Details</a>
+      </td>
+    </ng-container>
+
+
+    <!-- Template for details row -->
+    <ng-container matColumnDef="expandedDetail">
+      <td mat-cell *matCellDef="let element" [attr.colspan]="displayedStudentsColumnsList.length">
+
+        <div class="row student-element-detail" [@detailExpand]="element.isExpanded ? 'expanded' : 'collapsed'">
+          <mat-list>
+            <div mat-subheader>Detailed error analysis of  {{element.name}}</div>
+            <mat-list-item *ngFor="let subject of element.subjects">
+              <div mat-line>{{subject.name}}</div>
+              <div mat-line> {{subject.type}} </div>
+            </mat-list-item>
+          </mat-list>
+        </div>
+
+      </td>
+    </ng-container>
+
+
+    <tr mat-header-row *matHeaderRowDef="displayedStudentsColumnsList;sticky: true"></tr>
+    <tr mat-row *matRowDef="let element; columns: displayedStudentsColumnsList;" class="student-element-row"
+      [class.student-expanded-row]="element.isExpanded"></tr>
+
+    <!-- Extra row to show detail content column -->
+    <tr mat-row *matRowDef="let row; columns: ['expandedDetail']" class="student-detail-row"></tr>
+
+  </table>
+
+
+
+</div>

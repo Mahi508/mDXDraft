@@ -47,11 +47,39 @@
             <a mat-list-item [routerLink]="'/users'">
               <mat-icon>person</mat-icon> User Management
             </a>
-            <a mat-list-item [routerLink]="'/management'">
-              <mat-icon>dashboard</mat-icon> mDX Monitoring
-            </a>
-            <a mat-list-item [routerLink]="'/accounts'"> demo</a>
-            <a mat-list-item [routerLink]="'/create-account'"> demo </a>
+            <mat-nav-list >
+              <mat-expansion-panel style="background-color:#71be17">
+                <mat-expansion-panel-header style="background-color:#B2FF59">
+                  <a mat-list-item [routerLink]="'/management'">
+                    <mat-icon>dashboard</mat-icon> mDX Monitoring
+                  </a>
+                </mat-expansion-panel-header>
+            <a mat-list-item [routerLink]="'/management'">Bills</a>
+            <a mat-list-item routerLink>GRNs</a>
+            <a mat-list-item routerLink>Advances</a>
+            <a mat-list-item routerLink>Others</a>
+              </mat-expansion-panel>
+            </mat-nav-list>
+            <a mat-list-item [routerLink]="'/accounts'"> OtherOptions</a>
+            <a mat-list-item [routerLink]="'/create-account'"> OtherOptions </a>
+            <button style="padding: 10px;" mat-icon-button [matMenuTriggerFor]="billmenu" #menuTrigger="matMenuTrigger" (mouseover)="menuTrigger.openMenu()">
+              <span>OtherOptions</span>
+            </button>
+            <mat-menu #billmenu="matMenu" [overlapTrigger]="false">
+              <span (mouseleave)="menuTrigger.closeMenu()">
+                <button mat-menu-item>
+                  <mat-icon>home</mat-icon>
+                  <span>Bills</span>
+                </button>
+                <button mat-menu-item>
+                  <mat-icon>people_outline</mat-icon>
+                  <span>GRNs</span>
+                </button>
+                <button mat-menu-item>
+                  <span>Department Issues</span>
+                </button>
+              </span>
+              </mat-menu>
 
             <a mat-list-item (click)="sidenav.toggle()" href="" mat-list-item>Close</a>
 

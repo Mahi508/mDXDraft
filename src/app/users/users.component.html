@@ -6,13 +6,9 @@
       </mat-form-field>
       <mat-icon>search</mat-icon>
         <span class="flexExpand"></span>
-      <button mat-raised-button color="primary" routerLink="/adduser" class="nav-link" routerLinkActive="active">Add User</button>
+      <button mat-raised-button color="primary" routerLink="/adduser" routerLinkActive="active">Add User</button>
       </mat-toolbar-row>
   </mat-toolbar>
-
-
-
-
 
 <div class="example-container mat-elevation-z8">
 
@@ -26,8 +22,8 @@
 
     <!-- Progress Column -->
     <ng-container matColumnDef="progress">
-      <mat-header-cell *matHeaderCellDef mat-sort-header> Progress </mat-header-cell>
-      <mat-cell *matCellDef="let row"> {{row.progress}}% </mat-cell>
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Code </mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.progress}}</mat-cell>
     </ng-container>
 
     <!-- Name Column -->
@@ -38,8 +34,8 @@
 
     <!-- Color Column -->
     <ng-container matColumnDef="color">
-      <mat-header-cell *matHeaderCellDef mat-sort-header> Color </mat-header-cell>
-      <mat-cell *matCellDef="let row" [style.color]="row.color"> {{row.color}} </mat-cell>
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Address </mat-header-cell>
+      <mat-cell *matCellDef="let row" > {{row.color}} </mat-cell>
     </ng-container>
 
     <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>

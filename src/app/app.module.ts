@@ -18,9 +18,7 @@ import { AddUserComponent } from './add-user/add-user.component';
     AppComponent,
     UsersComponent,
     HomeComponent,
-    AddUserComponent,
-
-
+    AddUserComponent
   ],
   imports: [
     BrowserModule,
