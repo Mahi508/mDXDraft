@@ -9,6 +9,8 @@ import { UsersComponent } from './users/users.component';
 import { HomeComponent } from './home/home.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AddUserComponent } from './add-user/add-user.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -25,7 +27,10 @@ import { AddUserComponent } from './add-user/add-user.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
-    NgbModule
+    NgbModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
