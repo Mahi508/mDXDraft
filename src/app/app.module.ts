@@ -11,16 +11,17 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AddUserComponent } from './add-user/add-user.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
-
-
+import { LoginComponent } from './login/login.component';
+import { DashBoardComponent } from './dash-board/dash-board.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     UsersComponent,
     HomeComponent,
-    AddUserComponent
+    AddUserComponent,
+    LoginComponent,
+    DashBoardComponent
   ],
   imports: [
     BrowserModule,

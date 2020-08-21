@@ -34,7 +34,7 @@ export class UsersComponent {
     this.getUsers();
   }
   public async getUsers() {
-    this.res = await this.http.get('http://localhost:5000/users').toPromise();
+    this.res = await this.http.get('https://raw.githubusercontent.com/varaprasadreddy9676/FakeServer/master/users.json').toPromise();
     console.log(this.res.users);
     this.listData = new MatTableDataSource(this.res.users);
     this.listData.sort = this.sort;

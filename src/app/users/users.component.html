@@ -33,7 +33,7 @@
 
     <ng-container matColumnDef="status">
       <mat-header-cell *matHeaderCellDef mat-sort-header> Status </mat-header-cell>
-      <mat-cell *matCellDef="let row" ><span class="mobile-label">Status:</span>{{row.status}} </mat-cell>
+      <mat-cell *matCellDef="let row" ><span class="mobile-label">Status:</span>{{row.status}} &nbsp; &nbsp; <mat-slide-toggle color="primary"></mat-slide-toggle></mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="actions">
