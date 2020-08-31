@@ -2,55 +2,103 @@
   <div class="row">
     <div class="col-12">
       <div>
-        <h2>Add User</h2>
+        <h2>Edit User</h2>
         <form name="form">
           <div class="form-group">
             <mat-form-field style="width: 100%;">
               <mat-label>Name</mat-label>
-              <input matInput
-                     placeholder="Ex. John smith">
+              <input matInput placeholder="Ex. John smith">
             </mat-form-field>
           </div>
           <div class="form-group">
             <mat-form-field style="width: 100%;">
               <mat-label>Email</mat-label>
-              <input matInput
-                     placeholder="Ex. pat@example.com">
+              <input matInput placeholder="Ex. pat@example.com">
             </mat-form-field>
           </div>
           <div class="form-group">
             <mat-form-field style="width: 100%;">
               <mat-label>Phone</mat-label>
-              <input matInput
-                     placeholder="Ex. 9598874587">
+              <input matInput placeholder="Ex. 9598874587">
             </mat-form-field>
           </div>
           <div class="form-group">
+            <h3>Role: </h3>
+            <mat-radio-group color="primary">
+              <mat-radio-button value="1">Admin&nbsp;&nbsp;</mat-radio-button>
+              <mat-radio-button value="2">Customer&nbsp;&nbsp;</mat-radio-button>
+              <mat-radio-button value="3">Ops&nbsp;&nbsp;</mat-radio-button>
+            </mat-radio-group>
+          </div>
 
-              <mat-label>Status: &ensp;</mat-label>
-              <mat-slide-toggle color="primary"></mat-slide-toggle>
+          <div class="content">
+           <p>Linked Customers :</p>
 
+            <mat-grid-list cols="3" rowHeight="4:1">
+              <mat-grid-tile>
+                <mat-checkbox color="primary">Customer 1</mat-checkbox>
+              </mat-grid-tile>
+              <mat-grid-tile>
+                <mat-checkbox color="primary">Customer 2</mat-checkbox>
+              </mat-grid-tile>
+              <mat-grid-tile>
+                <mat-checkbox color="primary">Customer 3</mat-checkbox>
+              </mat-grid-tile>
+            </mat-grid-list>
+            &nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;<a href="#">Show less&nbsp; <i class="arrow up"></i></a>
+            <!-- <input placeholder="Filter Customers" class="filter-input"> -->
+
+                <mat-grid-list cols="3" rowHeight="4:1">
+                  <mat-grid-tile>
+                    <mat-checkbox color="primary">Customer 4</mat-checkbox>
+                  </mat-grid-tile>
+                  <mat-grid-tile>
+                    <mat-checkbox color="primary">Customer 5</mat-checkbox>
+                  </mat-grid-tile>
+                  <mat-grid-tile>
+                    <mat-checkbox color="primary">Customer 6</mat-checkbox>
+                  </mat-grid-tile>
+                  <mat-grid-tile>
+                    <mat-checkbox color="primary">Customer 7</mat-checkbox>
+                  </mat-grid-tile>
+                  <mat-grid-tile>
+                    <mat-checkbox color="primary">Customer 8</mat-checkbox>
+                  </mat-grid-tile>
+                  <mat-grid-tile>
+                    <mat-checkbox color="primary">Customer 9</mat-checkbox>
+                  </mat-grid-tile>
+                  <mat-grid-tile>
+                    <mat-checkbox color="primary">Customer 10</mat-checkbox>
+                  </mat-grid-tile>
+                  <mat-grid-tile>
+                    <mat-checkbox color="primary">Customer 11</mat-checkbox>
+                  </mat-grid-tile>
+                  <mat-grid-tile>
+                    <mat-checkbox color="primary">Customer 12</mat-checkbox>
+                  </mat-grid-tile>
+                  <mat-grid-tile>
+                    <mat-checkbox color="primary">Customer 13</mat-checkbox>
+                  </mat-grid-tile>
+                </mat-grid-list>
           </div>
           <div class="form-group">
-            <mat-form-field style="width: 100%;">
-              <mat-label>Customer</mat-label>
-              <mat-select multiple required>
-                <mat-option>Sparsh-YPR</mat-option><mat-option>Infantry</mat-option><mat-option>Sankara</mat-option>
-
-              </mat-select>
-              <mat-error >Please choose a customer</mat-error>
-            </mat-form-field>
+            <mat-label>Active &ensp;</mat-label>
+            <mat-slide-toggle color="primary"></mat-slide-toggle>
           </div>
-          <!-- <div class="form-group form-check">
-            <input type="checkbox" name="acceptTerms" id="acceptTerms" class="form-check-input"  required>
-            <label for="acceptTerms" class="form-check-label">Accept Terms & Conditions</label>
-            <div  class="invalid-feedback">Accept Ts & Cs is required</div>
-        </div> -->
-        <div class="text-center">
+          <div class="text-right">
 
-            <button mat-raised-button color="primary" >Add User</button>
-            <button mat-raised-button  routerLink="/users" routerLinkActive="active" style="background-color: #ffe54c;">Cancel</button>
-        </div>
+            <button mat-raised-button color="primary">Save&nbsp;&nbsp;</button>&nbsp;&nbsp;
+            <button mat-raised-button >Cancel</button>
+          </div>
         </form>
       </div>
     </div>

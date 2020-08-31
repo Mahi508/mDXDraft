@@ -41,13 +41,13 @@
 <!-- Side nav -->
 <mat-sidenav-container>
   <!-- <mat-sidenav  [fixedInViewport]="true"  #sidenav mode="side" opened > -->
-  <mat-sidenav #sidenav mode="side" opened style="background-color:#71890d">
+  <mat-sidenav #sidenav mode="side" opened style="background-color:#90aa27">
 
     <mat-nav-list>
-      <a mat-list-item [routerLink]="'/users'">
-        <mat-icon>person</mat-icon> User Management
+      <a style="color: white;" mat-list-item [routerLink]="'/users'">
+        <mat-icon style="color: white;">person</mat-icon> User Management
       </a>
-      <mat-nav-list>
+      <!-- <mat-nav-list>
         <mat-expansion-panel  style="background-color:#71890d">
           <mat-expansion-panel-header >
             <a mat-list-item [routerLink]="'/management'">
@@ -59,7 +59,7 @@
           <a mat-list-item routerLink>Advances</a>
           <a mat-list-item routerLink>Others</a>
         </mat-expansion-panel>
-      </mat-nav-list>
+      </mat-nav-list> -->
       <!-- <a mat-list-item [routerLink]="'/accounts'"> OtherOptions</a>
       <a mat-list-item [routerLink]="'/create-account'"> OtherOptions </a>
       <button style="padding: 10px;" mat-icon-button [matMenuTriggerFor]="billmenu" #menuTrigger="matMenuTrigger"

@@ -38,5 +38,12 @@ body { background-color: rgb(250, 249, 249) !important; }
     padding: 8px 24px;
   }
 }
+.h{
+  color: rgb(138, 136, 136);
+}
+.h:hover{
+  color: rgb(5, 0, 0);
+}
+
 
 

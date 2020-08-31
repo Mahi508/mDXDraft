@@ -19,7 +19,7 @@ import { AddUserComponent } from '../add-user/add-user.component';
 export class UsersComponent {
   res: any;
 
-  displayedColumns = ['name', 'phone', 'email', 'status', 'actions'];
+  displayedColumns = ['name', 'phone', 'email', 'active', 'actions'];
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;

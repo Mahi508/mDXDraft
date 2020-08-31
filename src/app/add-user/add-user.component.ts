@@ -9,7 +9,8 @@ import { Component, OnInit } from '@angular/core';
 export class AddUserComponent implements OnInit {
 
   constructor() { }
-
+  panelOpenState = true;
+  panelOpenState2 = false;
   ngOnInit(): void {
   }
 
